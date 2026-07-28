@@ -7,6 +7,10 @@ import marche2 from "../assets/marche2.jpg";
 import ecommerce from "../assets/ecom.jpeg";
 import jeffdatapc from "../assets/jeffdatapc.jpeg";
 import solar from "../assets/solar.jpg";
+import sales1 from "../assets/sales1.mp4";
+import sales2 from "../assets/sales2.mp4";
+import sales3 from "../assets/sales3.mp4";
+import sales4 from "../assets/sales4.mp4";
 
 export interface Experience {
   year: string;
@@ -50,6 +54,7 @@ export const experiences: Experience[] = [
     org: "Jeffdata PC",
     location: "Tondo, Manila, PH",
     photos: [jeffdatapc],
+    video: sales1,
     description:
       "Assisted customers with product inquiries, order processing, creating video content, and after-sales support for a local computer hardware business.",
     tags: ["Customer Service", "Computer Hardware", "Video Content Creation"],
