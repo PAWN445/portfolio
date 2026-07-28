@@ -137,7 +137,7 @@ export default function AboutMe() {
                     >
                       <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
                         <div className="h-44 w-full shrink-0 overflow-hidden rounded-lg border border-neutral-800 sm:h-28 sm:w-36">
-                          <PhotoSlot photo={exp.photo} alt={exp.org} />
+                          <PhotoSlot photo={exp.photos[0] ?? null} alt={exp.org} />
                         </div>
 
                         <div className="min-w-0 flex-1">
