@@ -2,6 +2,8 @@ import structure from "../assets/4core.jpg";
 import enumerator from "../assets/enumerator.jpeg";
 import graphic from "../assets/graphic.jpg";
 import marche from "../assets/marche.jpg";
+import marche1 from "../assets/marche1.jpg";
+import marche2 from "../assets/marche2.jpg";
 import ecommerce from "../assets/ecom.jpeg";
 import jeffdatapc from "../assets/jeffdatapc.jpeg";
 import solar from "../assets/solar.jpg";
@@ -73,7 +75,7 @@ export const experiences: Experience[] = [
     role: "Admin Assistant",
     org: "Marche Pinas",
     location: "Baguio City, PH",
-    photos: [marche],
+    photos: [marche, marche1, marche2],
     description:
       "Customer support, order processing, and inventory management for a local e-commerce business. Implemented a simple inventory tracking system to streamline operations.",
     tags: ["Shopee", "Lazada", "TikTok Shop", "Facebook Marketplace"],
