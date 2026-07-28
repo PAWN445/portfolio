@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { experiences } from "../data/Experience";
 
@@ -18,6 +19,38 @@ function ArrowLeft({ className }: { className?: string }) {
   );
 }
 
+function ChevronLeft({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M15 18l-6-6 6-6" />
+    </svg>
+  );
+}
+
+function ChevronRight({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M9 18l6-6-6-6" />
+    </svg>
+  );
+}
+
 function MapPin({ className }: { className?: string }) {
   return (
     <svg
@@ -32,6 +65,105 @@ function MapPin({ className }: { className?: string }) {
       <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
       <circle cx="12" cy="10" r="3" />
     </svg>
+  );
+}
+
+type MediaItem = { type: "image"; src: string } | { type: "video"; src: string };
+
+interface MediaSliderProps {
+  photos: string[];
+  video?: string;
+  alt: string;
+  accent: string;
+}
+
+function MediaSlider({ photos, video, alt, accent }: MediaSliderProps) {
+  const items: MediaItem[] = [
+    ...photos.map((src): MediaItem => ({ type: "image", src })),
+    ...(video ? [{ type: "video", src: video } as MediaItem] : []),
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  if (items.length === 0) {
+    return (
+      <div className="flex h-full w-full items-center justify-center bg-[#161616] text-neutral-600">
+        No photo yet
+      </div>
+    );
+  }
+
+  const goTo = (i: number) => setIndex((i + items.length) % items.length);
+
+  return (
+    <div className="group relative h-full w-full overflow-hidden bg-[#161616]">
+      {/* Track */}
+      <div
+        className="flex h-full transition-transform duration-500 ease-out"
+        style={{
+          width: `${items.length * 100}%`,
+          transform: `translateX(-${(index * 100) / items.length}%)`,
+        }}
+      >
+        {items.map((item, i) => (
+          <div key={i} className="h-full shrink-0" style={{ width: `${100 / items.length}%` }}>
+            {item.type === "image" ? (
+              <img
+                src={item.src}
+                alt={`${alt} — ${i + 1}`}
+                className="h-full w-full object-cover object-center"
+              />
+            ) : (
+              <video
+                src={item.src}
+                controls
+                playsInline
+                className="h-full w-full bg-black object-contain"
+              />
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Prev / Next arrows — only shown when there's more than one slide */}
+      {items.length > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={() => goTo(index - 1)}
+            aria-label="Previous"
+            className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white opacity-0 backdrop-blur transition-opacity group-hover:opacity-100 focus:opacity-100 sm:p-2"
+          >
+            <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+          </button>
+          <button
+            type="button"
+            onClick={() => goTo(index + 1)}
+            aria-label="Next"
+            className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white opacity-0 backdrop-blur transition-opacity group-hover:opacity-100 focus:opacity-100 sm:p-2"
+          >
+            <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
+          </button>
+
+          {/* Dot indicators */}
+          <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
+            {items.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => goTo(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className="h-1.5 rounded-full transition-all"
+                style={{
+                  width: i === index ? "18px" : "6px",
+                  backgroundColor: i === index ? accent : "rgba(255,255,255,0.4)",
+                }}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
   );
 }
 
@@ -74,20 +206,10 @@ export default function BlogPost() {
       <div className="mx-auto max-w-3xl px-5 pt-8 sm:px-8 sm:pt-10 lg:px-16">
       </div>
 
-      {/* Hero photo */}
+      {/* Hero media — sliding gallery of photos, plus video as the last slide if present */}
       <div className="mx-auto mt-6 max-w-3xl px-5 sm:mt-8 sm:px-8 lg:px-16">
         <div className="h-52 w-full overflow-hidden rounded-2xl border border-neutral-800 xs:h-64 sm:h-80 md:h-96">
-          {entry.photo ? (
-            <img
-              src={entry.photo}
-              alt={entry.org}
-              className="h-full w-full object-cover object-center"
-            />
-          ) : (
-            <div className="flex h-full w-full items-center justify-center bg-[#161616] text-neutral-600">
-              No photo yet
-            </div>
-          )}
+          <MediaSlider photos={entry.photos} video={entry.video} alt={entry.org} accent={accent} />
         </div>
       </div>
 

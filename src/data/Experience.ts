@@ -11,7 +11,14 @@ export interface Experience {
   role: string;
   org: string;
   location: string;
-  photo: string | null;
+  /** One or more images shown as a sliding gallery on the blog post page.
+   *  Just add more paths to the array to get more slides — no other code changes needed. */
+  photos: string[];
+  /** Optional video (mp4/webm) shown as an extra slide after the photos.
+   *  Import it the same way as the images above, e.g.:
+   *  import jeffdataReel from "../assets/jeffdata-reel.mp4";
+   *  then set video: jeffdataReel */
+  video?: string;
   description: string;
   tags: string[];
   /** URL-safe id used for the /blog/:slug route. Keep lowercase, hyphenated. */
@@ -27,20 +34,20 @@ export const experiences: Experience[] = [
     role: "Try to Build Solar Company Services",
     org: "Personal Business Venture",
     location: "Philippines",
-    photo: solar,
+    photos: [solar],
     description:
       "Solar company services business venture, selling solar products online through Social Media, customer support, and conduct site visits.",
     tags: ["Installation", "Electrical", "Monitoring"],
     slug: "solar-company-services",
     story:
-      "I've dreamed for a long time that one day i'am become a owner/ceo of company na hindi lang online-based kundi may totoong physical presence din — ganito yung Solar Company Services. Nagsimula ito sa curiosity ko sa solar energy, na lalo pang lumaki nung nakatrabaho ko yung GoSolar / Suntastic Solar Corp project bilang developer. Doon ko napansin kung gaano kalaki ang demand ng mga Pilipino para sa mas mura at sustainable na energy source. Kaya naisip kong subukan — mag-alok ng solar products sa social media, mag-conduct ng site visits, at personal na sagutin yung mga katanungan ng customers. Iba yung feeling kapag ikaw mismo yung nagbebenta at nag-aasikaso ng buong operations, mula sa marketing hanggang sa after-sales support. Marami pa akong natututunan araw-araw — pero dito ko rin nakikita kung paano pinagsasama ang technical background ko sa totoong business.",
+      "I've dreamed for a long time that one day i'am become a owner/ceo of a company na hindi lang online-based kundi may totoong physical presence din — ganito yung Solar Company Services. Nagsimula ito sa curiosity ko sa solar energy, na lalo pang lumaki nung nakatrabaho ko yung GoSolar / Suntastic Solar Corp project bilang developer. Doon ko napansin kung gaano kalaki ang demand ng mga Pilipino para sa mas mura at sustainable na energy source. Kaya naisip kong subukan — mag-alok ng solar products sa social media, mag-conduct ng site visits, at personal na sagutin yung mga katanungan ng customers. Iba yung feeling kapag ikaw mismo yung nagbebenta at nag-aasikaso ng buong operations, mula sa marketing hanggang sa after-sales support. Marami pa akong natututunan araw-araw — pero dito ko rin nakikita kung paano pinagsasama ang technical background ko sa totoong business.",
   },
   {
     year: "2024 — 2025",
     role: "Sales Marketing / Customer Support",
     org: "Jeffdata PC",
     location: "Tondo, Manila, PH",
-    photo: jeffdatapc,
+    photos: [jeffdatapc],
     description:
       "Assisted customers with product inquiries, order processing, creating video content, and after-sales support for a local computer hardware business.",
     tags: ["Customer Service", "Computer Hardware", "Video Content Creation"],
@@ -53,7 +60,7 @@ export const experiences: Experience[] = [
     role: "Try to Build My Own E-Commerce Business",
     org: "Personal Business Venture",
     location: "Philippines",
-    photo: ecommerce,
+    photos: [ecommerce],
     description:
       "Ecommerce business venture, selling products online through Shopee, Lazada, and TikTok Shop. Managed inventory, customer support, and order processing.",
     tags: ["Solar Lights", "Kitchenware", "Phone Accessories"],
@@ -66,7 +73,7 @@ export const experiences: Experience[] = [
     role: "Admin Assistant",
     org: "Marche Pinas",
     location: "Baguio City, PH",
-    photo: marche,
+    photos: [marche],
     description:
       "Customer support, order processing, and inventory management for a local e-commerce business. Implemented a simple inventory tracking system to streamline operations.",
     tags: ["Shopee", "Lazada", "TikTok Shop", "Facebook Marketplace"],
@@ -79,7 +86,7 @@ export const experiences: Experience[] = [
     role: "Graphic Designer / Seasonal",
     org: "Collective Solutions",
     location: "Quezon City, PH",
-    photo: graphic,
+    photos: [graphic],
     description:
       "Designed seasonal marketing materials for clients, including social media graphics, email templates, and promotional banners.",
     tags: ["Wedding Cards", "Holiday Cards", "Social Media Graphics"],
@@ -92,7 +99,7 @@ export const experiences: Experience[] = [
     role: "Enumerator",
     org: "Philippine Statistics Authority — 2019 Census of Population and Housing",
     location: "Metro Manila, PH",
-    photo: enumerator,
+    photos: [enumerator],
     description:
       "Conducted household surveys and collected data for the 2019 Census of Population and Housing, contributing to national statistical analysis and planning.",
     tags: ["Field Surveys", "Data Collection"],
@@ -105,7 +112,7 @@ export const experiences: Experience[] = [
     role: "Intern / PHP Developer",
     org: "4Core Data Structure — CCTV Cabling System",
     location: "Quezon City, PH",
-    photo: structure,
+    photos: [structure],
     description:
       "Built a portfolio of PHP web apps for their CCTV cabling business, including a quotation builder, inventory system, and client portal.",
     tags: ["PHP", "Vanilla JS", "Vanilla CSS"],
