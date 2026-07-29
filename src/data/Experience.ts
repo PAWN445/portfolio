@@ -4,8 +4,14 @@ import graphic from "../assets/graphic.jpg";
 import marche from "../assets/marche.jpg";
 import marche1 from "../assets/marche1.jpg";
 import marche2 from "../assets/marche2.jpg";
+import marche3 from "../assets/marche3.jpg";
+import marche4 from "../assets/marche4.jpg";
+import marche5 from "../assets/marche5.jpg";
+import marche6 from "../assets/marche6.jpeg";
+import marche7 from "../assets/marche7.jpg";
 import ecommerce from "../assets/ecom.jpeg";
 import jeffdatapc from "../assets/jeffdatapc.jpeg";
+import jeffdatapc1 from "../assets/jeffdatapc1.jpeg";
 import solar from "../assets/solar.jpg";
 import sales1 from "../assets/sales1.mp4";
 import sales2 from "../assets/sales2.mp4";
@@ -17,20 +23,11 @@ export interface Experience {
   role: string;
   org: string;
   location: string;
-  /** One or more images shown as a sliding gallery on the blog post page.
-   *  Just add more paths to the array to get more slides — no other code changes needed. */
   photos: string[];
-  /** Optional video (mp4/webm) shown as an extra slide after the photos.
-   *  Import it the same way as the images above, e.g.:
-   *  import jeffdataReel from "../assets/jeffdata-reel.mp4";
-   *  then set video: jeffdataReel */
-  video?: string;
+  videos?: string[];
   description: string;
   tags: string[];
-  /** URL-safe id used for the /blog/:slug route. Keep lowercase, hyphenated. */
   slug: string;
-  /** Longer version of the story shown on the individual blog post page.
-   *  Falls back to `description` if left empty. */
   story?: string;
 }
 
@@ -53,14 +50,14 @@ export const experiences: Experience[] = [
     role: "Sales Marketing / Customer Support",
     org: "Jeffdata PC",
     location: "Tondo, Manila, PH",
-    photos: [jeffdatapc],
-    video: sales1,
+    photos: [jeffdatapc, jeffdatapc1],
+    videos: [sales1, sales2, sales3, sales4],
     description:
       "Assisted customers with product inquiries, order processing, creating video content, and after-sales support for a local computer hardware business.",
     tags: ["Customer Service", "Computer Hardware", "Video Content Creation"],
     slug: "sales-marketing-customer-support",
     story:
-      "Sa Jeffdata PC, natutunan ko kung gaano kahalaga ang malinaw at maayos na komunikasyon sa customer, lalo na sa negosyong technical ang mga produkto — computer hardware kasi hindi laging madaling ipaliwanag sa mga customer na hindi techie. Bukod sa pag-assist sa product inquiries at order processing, nagsimula rin akong gumawa ng video content para sa social media ng negosyo, isang bagay na hindi ko inaasahang gagawin pero natutunan kong mahalin. Dito ko rin naranasan yung buong cycle ng after-sales support — mula sa unang tanong ng customer hanggang sa pag-solve ng mga isyu pagkatapos ng bili. Malaking factor 'to sa naging appreciation ko sa customer experience, isang bagay na dala-dala ko pa rin ngayon kapag nagdi-design ako ng mga interface at flows para sa mga app na ginagawa ko.",
+      "At Jeffdata PC, I've Learned a lot about the importance of clear and effective communication with customers. specially in terms of business and technical aspects — specially in computer parts and hardware this is not easy to explain in customers which not have a knowledge on technologies. Aside from assisting customers inquiries on product and processing orders, I've start to learn on how to create a video content creation to promote the business and products, this is the most important things that i never expected to do but over time, I learned to love it. in this job i experience the whole cycle of after-sales support from start of conversation questions unto solve the problems that customers encounter. This became a major factor in helping me appreciate the importance of customer experience.",
   },
   {
     year: "2021 — 2022",
@@ -80,7 +77,7 @@ export const experiences: Experience[] = [
     role: "Admin Assistant",
     org: "Marche Pinas",
     location: "Baguio City, PH",
-    photos: [marche, marche1, marche2],
+    photos: [marche, marche1, marche2, marche3, marche4, marche5, marche6, marche7],
     description:
       "Customer support, order processing, and inventory management for a local e-commerce business. Implemented a simple inventory tracking system to streamline operations.",
     tags: ["Shopee", "Lazada", "TikTok Shop", "Facebook Marketplace"],

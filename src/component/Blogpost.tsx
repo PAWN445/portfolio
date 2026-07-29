@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { experiences } from "../data/Experience";
 
@@ -72,18 +72,25 @@ type MediaItem = { type: "image"; src: string } | { type: "video"; src: string }
 
 interface MediaSliderProps {
   photos: string[];
-  video?: string;
+  videos?: string[];
   alt: string;
   accent: string;
 }
 
-function MediaSlider({ photos, video, alt, accent }: MediaSliderProps) {
+function MediaSlider({ photos, videos, alt, accent }: MediaSliderProps) {
   const items: MediaItem[] = [
     ...photos.map((src): MediaItem => ({ type: "image", src })),
-    ...(video ? [{ type: "video", src: video } as MediaItem] : []),
+    ...(videos ?? []).map((src): MediaItem => ({ type: "video", src })),
   ];
 
   const [index, setIndex] = useState(0);
+  const videoRefs = useRef<Record<number, HTMLVideoElement | null>>({});
+
+  useEffect(() => {
+    Object.entries(videoRefs.current).forEach(([i, el]) => {
+      if (el && Number(i) !== index) el.pause();
+    });
+  }, [index]);
 
   if (items.length === 0) {
     return (
@@ -115,6 +122,9 @@ function MediaSlider({ photos, video, alt, accent }: MediaSliderProps) {
               />
             ) : (
               <video
+                ref={(el) => {
+                  videoRefs.current[i] = el;
+                }}
                 src={item.src}
                 controls
                 playsInline
@@ -209,7 +219,7 @@ export default function BlogPost() {
       {/* Hero media — sliding gallery of photos, plus video as the last slide if present */}
       <div className="mx-auto mt-6 max-w-3xl px-5 sm:mt-8 sm:px-8 lg:px-16">
         <div className="h-52 w-full overflow-hidden rounded-2xl border border-neutral-800 xs:h-64 sm:h-80 md:h-96">
-          <MediaSlider photos={entry.photos} video={entry.video} alt={entry.org} accent={accent} />
+          <MediaSlider photos={entry.photos} videos={entry.videos} alt={entry.org} accent={accent} />
         </div>
       </div>
 
