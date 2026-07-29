@@ -33,10 +33,6 @@ function BasicInfo(){
 
 
           <div className="flex flex-wrap gap-3 mb-7">
-            <button
-              className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full border  border-white/20 text-white">
-              View Projects
-            </button>
             <button className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-full border border-white/20 text-white">
               Contact Me
             </button>
