@@ -1,6 +1,10 @@
 import structure from "../assets/4core.jpg";
 import enumerator from "../assets/enumerator.jpeg";
+import enum1 from "../assets/enum1.jpg";
+import enum2 from "../assets/enum2.jpg";
 import graphic from "../assets/graphic.jpg";
+import graphics1 from "../assets/graphics1.jpg";
+import graphics2 from "../assets/graphics2.jpg";
 import marche from "../assets/marche.jpg";
 import marche1 from "../assets/marche1.jpg";
 import marche2 from "../assets/marche2.jpg";
@@ -13,6 +17,8 @@ import ecommerce from "../assets/ecom.jpeg";
 import jeffdatapc from "../assets/jeffdatapc.jpeg";
 import jeffdatapc1 from "../assets/jeffdatapc1.jpeg";
 import solar from "../assets/solar.jpg";
+import solar1 from "../assets/solar1.mp4";
+import solar2 from "../assets/solar2.mp4";
 import sales1 from "../assets/sales1.mp4";
 import sales2 from "../assets/sales2.mp4";
 import sales3 from "../assets/sales3.mp4";
@@ -35,15 +41,16 @@ export const experiences: Experience[] = [
   {
     year: "2026 — Present",
     role: "Try to Build Solar Company Services",
-    org: "Personal Business Venture",
+    org: "Business Venture",
     location: "Philippines",
     photos: [solar],
+    videos: [solar1, solar2],
     description:
       "Solar company services business venture, selling solar products online through Social Media, customer support, and conduct site visits.",
     tags: ["Installation", "Electrical", "Monitoring"],
     slug: "solar-company-services",
     story:
-      "I've dreamed for a long time that one day i'am become a owner/ceo of a company na hindi lang online-based kundi may totoong physical presence din — ganito yung Solar Company Services. Nagsimula ito sa curiosity ko sa solar energy, na lalo pang lumaki nung nakatrabaho ko yung GoSolar / Suntastic Solar Corp project bilang developer. Doon ko napansin kung gaano kalaki ang demand ng mga Pilipino para sa mas mura at sustainable na energy source. Kaya naisip kong subukan — mag-alok ng solar products sa social media, mag-conduct ng site visits, at personal na sagutin yung mga katanungan ng customers. Iba yung feeling kapag ikaw mismo yung nagbebenta at nag-aasikaso ng buong operations, mula sa marketing hanggang sa after-sales support. Marami pa akong natututunan araw-araw — pero dito ko rin nakikita kung paano pinagsasama ang technical background ko sa totoong business.",
+      "In this jurney my Brother and I trying to build a Solar Company. this company started when my brother asking a question regarding on how to run a advertising in Facebook. then time flew by, he comeback to me and said you should try to study about solar energy and solar materials and equipments. We try to build a Solar Company then i said okay, Then i start to research how to compute the monthly bills. to fit the system size of solar setup and more. then i start to create a logo, website, product design, find the right supplier of materials and equipment, create a content, in this journey i found out how big the demand of our felow filipinos for affordable and sustainable energy. I Dont know how to explain the feelings when you are handle or manage the daily operations. from marketing, graphics, contents, contact the suppliers, assisting customers inquiries, ads manager. I've learned a lot every day — This is also I discovered how to integrate my technical knowledge with real business operations, allowing me to better understand both the technical and customer-facing aspects of the business.",
   },
   {
     year: "2024 — 2025",
@@ -90,7 +97,7 @@ export const experiences: Experience[] = [
     role: "Graphic Designer / Seasonal",
     org: "Collective Solutions",
     location: "Quezon City, PH",
-    photos: [graphic],
+    photos: [graphic, graphics1, graphics2],
     description:
       "Designed seasonal marketing materials for clients, including social media graphics, email templates, and promotional banners.",
     tags: ["Wedding Cards", "Holiday Cards", "Social Media Graphics"],
@@ -103,7 +110,7 @@ export const experiences: Experience[] = [
     role: "Enumerator",
     org: "Philippine Statistics Authority — 2019 Census of Population and Housing",
     location: "Metro Manila, PH",
-    photos: [enumerator],
+    photos: [enumerator, enum1, enum2],
     description:
       "Conducted household surveys and collected data for the 2019 Census of Population and Housing, contributing to national statistical analysis and planning.",
     tags: ["Field Surveys", "Data Collection"],
