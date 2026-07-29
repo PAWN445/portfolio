@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom'
 import AboutMe from './component/AboutMe'
 import BlogPost from './component/Blogpost'
 import BlogPage from './component/Blogpage'
+import Certifications from './component/Certification'
 
 function Home() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/contact" element={<BasicInfo />} />
         <Route path="/projects" element={<Project />} />
         <Route path="/aboutme" element={<AboutMe />} />
+        <Route path="/certifications" element={<Certifications />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>

@@ -44,6 +44,8 @@ function BasicInfo(){
               View Resume
             </button>
             <Link className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-full border border-white/20 text-white" to="/aboutme">About Me</Link>
+
+            <Link className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-full border border-white/20 text-white" to="/certifications">Certifications</Link>
           </div>
         </div>
       </div>
