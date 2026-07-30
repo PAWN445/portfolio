@@ -9,6 +9,8 @@ import college3 from "../assets/college3.jpeg";
 import graphic from "../assets/graphic.jpg";
 import graphics1 from "../assets/graphics1.jpg";
 import graphics2 from "../assets/graphics2.jpg";
+import graphics3 from "../assets/graphics3.jpg";
+import graphics4 from "../assets/graphics4.jpeg";
 import marche from "../assets/marche.jpg";
 import marche1 from "../assets/marche1.jpg";
 import marche2 from "../assets/marche2.jpg";
@@ -101,7 +103,7 @@ export const experiences: Experience[] = [
     role: "Graphic Designer / Seasonal",
     org: "Collective Solutions",
     location: "Quezon City, PH",
-    photos: [graphic, graphics1, graphics2],
+    photos: [graphic, graphics1, graphics2, graphics3, graphics4],
     description:
       "Designed seasonal marketing materials for clients, including social media graphics, email templates, and promotional banners.",
     tags: ["Wedding Cards", "Holiday Cards", "Social Media Graphics"],

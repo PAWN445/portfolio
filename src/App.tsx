@@ -8,6 +8,7 @@ import AboutMe from './component/AboutMe'
 import BlogPost from './component/Blogpost'
 import BlogPage from './component/Blogpage'
 import Certifications from './component/Certification'
+import ContactMe from './component/ContactMe'
 
 function Home() {
   return (
@@ -20,6 +21,18 @@ function Home() {
       <Project/>
       <hr className='border-white/5'/>
       <AboutMe/>
+      <hr className='border-white/5'/>
+      <Certifications/>
+      <hr className='border-white/5'/>
+      <BlogPage/>
+      <hr className='border-white/5'/>
+      <div className='text-center text-white/50 py-4'>
+      <ContactMe/>
+      <br/>
+      <hr className='border-white/5'/>
+      <br/>
+        <p>© 2024 All rights reserved.</p>
+      </div>
     </>
   )
 }

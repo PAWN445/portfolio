@@ -3,11 +3,34 @@ interface Certification {
   issuer: string;
   date: string;
   credentialUrl?: string;
-  image?: string; // path to certificate image
+  image?: string;
 }
 
 const certifications: Certification[] = [
   {
+    title: "Solar Night Light Assembly",
+    issuer: "Tesda",
+    date: "July 20 2026",
+    credentialUrl: "/certificates/solarCert.jpg",
+    image: "/certificates/solarCert.jpg",
+  },
+
+    {
+    title: "Solar Night Light Assembly",
+    issuer: "Tesda",
+    date: "July 20 2026",
+    credentialUrl: "/certificates/solarCert.jpg",
+    image: "/certificates/solarCert.jpg",
+  },
+
+    {
+    title: "Solar Night Light Assembly",
+    issuer: "Tesda",
+    date: "July 20 2026",
+    credentialUrl: "/certificates/solarCert.jpg",
+    image: "/certificates/solarCert.jpg",
+  },
+    {
     title: "Solar Night Light Assembly",
     issuer: "Tesda",
     date: "July 20 2026",
@@ -19,12 +42,12 @@ const certifications: Certification[] = [
 
 function Certifications() {
   return (
-    <div className="min-h-screen py-20 px-6 bg-slate-50">
+    <div className="min-h-screen py-20 px-6 bg-black">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl font-bold mb-2 text-slate-800">
+        <h1 className="text-4xl font-bold mb-2 text-white">
           Certifications
         </h1>
-        <p className="text-lg text-slate-500 mb-10">
+        <p className="text-lg text-white mb-10">
           Courses and credentials I've completed.
         </p>
 

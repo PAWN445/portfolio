@@ -1,12 +1,9 @@
-/**
- * Blog page — "story kada picture" format.
- * Matches the dark bg / Poppins-Inter / #C1443C accent style of AboutMePage.
- *
- * HOW TO ADD YOUR OWN PHOTOS (sa real project mo):
- * 1) Ilagay yung image sa src/assets, e.g. src/assets/first-deploy.jpg
- * 2) Sa taas ng file, import mo: import firstDeploy from "./assets/first-deploy.jpg";
- * 3) Palitan yung matching `photo: null` sa entries array sa ibaba ng `photo: firstDeploy`
- */
+import solar from "../assets/solar.jpg";
+import jeffdatapc from "../assets/jeffdatapc.jpeg";
+import ecommerce from "../assets/ecom.jpeg";
+import marche2 from "../assets/marche2.jpg";
+import graphics4 from "../assets/graphics4.jpeg";
+import enumerator from "../assets/enumerator.jpeg";
 
 function Camera({ className, strokeWidth = 1.5 }: { className?: string; strokeWidth?: number }) {
   return (
@@ -36,36 +33,52 @@ interface StoryEntry {
 
 const entries: StoryEntry[] = [
   {
-    date: "July 2026",
-    title: "Nag-umpisa ang Inventory System",
-    photo: null,
+    date: "2026 — Present",
+    title: "Try to Build Solar Company Services",
+    photo: solar,
     story:
-      "Isang gabi, habang nag-sketch ako ng schema sa notebook, napagtanto ko na mas kumplikado pala ang totoong business logic kaysa sa naiisip ko sa simula. Dito nagsimula yung React + Supabase inventory system na ginagawa ko ngayon — mula sa page architecture hanggang sa design system.",
-    tags: ["React", "Supabase", "TypeScript"],
-  },
-  {
-    date: "2025",
-    title: "Unang beses mag-deploy sa production",
-    photo: null,
-    story:
-      "Yung GoSolar site, mula sa localhost hanggang sa live URL — ramdam na ramdam yung kaba nung una kong pinindot yung deploy button sa Netlify. Nag-broken pa nga yung routing pagkatapos, pero natutunan ko doon kung paano talaga gumagana ang production builds.",
-    tags: ["React Router", "Netlify"],
+      "In this jurney my Brother and I trying to build a Solar Company. this company started when my brother asking a question regarding on how to run a advertising in Facebook. then time flew by, he comeback to me and said you should try to study about solar energy and solar materials and equipments. We try to build a Solar Company then i said okay, Then i start to research how to compute the monthly bills. to fit the system size of solar setup and more. then i start to create a logo, website, product design, find the right supplier of materials and equipment, create a content, in this journey i found out how big the demand of our felow filipinos for affordable and sustainable energy. I Dont know how to explain the feelings when you are handle or manage the daily operations. from marketing, graphics, contents, contact the suppliers, assisting customers inquiries, ads manager. I've learned a lot every day — This is also I discovered how to integrate my technical knowledge with real business operations, allowing me to better understand both the technical and customer-facing aspects of the business.",
+    tags: ["Installation", "Electrical", "Monitoring"],
   },
   {
     date: "2024 — 2025",
-    title: "Dalawang gilid ng parehong app",
-    photo: null,
+    title: "Sales Marketing and Customer Service",
+    photo: jeffdatapc,
     story:
-      "Ginawa ko yung customer app at driver app ng MyBookingKa nang magkasabay. Interesting yung experience na makita paano nag-uusap yung dalawang app sa isa't isa gamit ang Supabase Realtime — parang nag-a-abot ng baton sa relay race.",
-    tags: ["Flutter", "Riverpod", "Realtime"],
+      "At Jeffdata PC, I've Learned a lot about the importance of clear and effective communication with customers. specially in terms of business and technical aspects — specially in computer parts and hardware this is not easy to explain in customers which not have a knowledge on technologies. Aside from assisting customers inquiries on product and processing orders, I've start to learn on how to create a video content creation to promote the business and products, this is the most important things that i never expected to do but over time, I learned to love it. in this job i experience the whole cycle of after-sales support from start of conversation questions unto solve the problems that customers encounter. This became a major factor in helping me appreciate the importance of customer experience.",
+    tags: ["Customer Service", "Computer Hardware", "Video Content Creation"],
   },
   {
-    date: "2024",
-    title: "Pagbabalik sa software development",
-    photo: null,
+    date: "2021 — 2022",
+    title: "Try to Build My Own E-Commerce Business",
+    photo: ecommerce,
     story:
-      "Pagkatapos ng ilang taon sa sales, bumalik ako sa coding — nag-umpisa uli sa mga JavaScript fundamentals, parang bagong estudyante. Yung VIA admin dashboard yung unang malaking proyekto na natapos ko simula nung bumalik ako.",
-    tags: ["React", "Comeback"],
+      "During Pandemic I'm thinking how can i earn more money even while you are in your home and working, so i conduct research then i found what we called E-commerce and how to run the ads on social media — Then i try to sell product online like solar street lights, kitchenware, phone accessories using Shopee, Lazada, TikTok Shop, and Facebook Marketplace, facebook ads. In this Business Journey i experience a lot! on how to Hard managing business.: tracking the inventory, answering customers concerns and inquiries, and also processing orders, I handle all the tasks on my own. in this journey i learned a lot — like don't borrow money in the bank when you are startup, It's not just about selling the product Instead, it's about understanding the business dynamics and customer needs. 'Even though this journey was not successful, this journey was giving me a experience —  I experience the challenges firsthand as a business owner.",
+    tags: ["Solar Lights", "Kitchenware", "Phone Accessories"],
+  },
+  {
+    date: "2021 — 2023",
+    title: "Admin Assistant",
+    photo: marche2,
+    story:
+      "Here at Marche Pinas, I've Become a Admin Assistant for a  local e-commerce business which selling using multiple platforms — Shopee, Lazada, TikTok Shop, at Facebook Marketplace. There was a lot of manual work at first. — track the stocks, confirming orders in multiple platforms, answering customers inquiries.",
+    tags: ["Shopee", "Lazada", "TikTok Shop", "Facebook Marketplace"],
+  },
+    {
+    date: "2020",
+    title: "Seasonal Graphic Designer",
+    photo: graphics4,
+    story:
+      "Here at Collective Solutions, I Became seasonal graphic designer we create a — wedding cards, holiday cards, social media graphics, this experience teach me valuable things: like visual hierarchy, spacing, and color combination — until now im using all this principle while im creating a web design and mobile apps. in this work I also realized the importance of being deadline-driven and managing my time effectively. specially in seasonal projects where fixed the dates. (etc, you don't need to late the Christmas card design). The design sensibility I learned here quietly influences every interface I create today.",
+    tags: ["Wedding Cards", "Holiday Cards", "Social Media Graphics"],
+  },
+    {
+    date: "2019",
+    title: "Enumerator",
+    photo: enumerator,
+    story:
+      "When I was a college student my College friends and I, Planning to apply a part time job while semester break, We became part of the 2019 Census of Population and Housing as an enumerator for the Philippine Statistics Authority. I walked from house to house in Metro Manila, collecting data for national statistical planning. It was physically demanding and required patience to communicate with people from different backgrounds. However, this experience gave me appreciation for how raw data is used in making significant decisions at the national level. I also realized the importance of accuracy and consistency in data collection — a principle I still carry with me today when designing database schemas for apps.",
+    tags: ["Field Surveys", "Data Collection"],
   },
 ];
 
