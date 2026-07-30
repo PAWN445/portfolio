@@ -189,8 +189,8 @@ export default function BlogPost() {
   if (!entry) {
     return (
       <div className="flex min-h-screen w-full flex-col items-center justify-center gap-4 bg-black px-6 text-center font-inter text-white">
-        <h1 className="font-poppins text-2xl font-bold">Story not found</h1>
-        <p className="text-neutral-400">
+        <h1 className="font-poppins text-xl font-bold sm:text-2xl">Story not found</h1>
+        <p className="text-sm text-neutral-400 sm:text-base">
           Wala kaming nahanap na entry para dito.
         </p>
         <Link
@@ -213,45 +213,45 @@ export default function BlogPost() {
         .font-inter { font-family: 'Inter', sans-serif; }
       `}</style>
 
-      <div className="mx-auto max-w-3xl px-5 pt-8 sm:px-8 sm:pt-10 lg:px-16">
+      <div className="mx-auto max-w-3xl px-4 pt-6 sm:px-8 sm:pt-10 lg:px-16">
       </div>
 
       {/* Hero media — sliding gallery of photos, plus video as the last slide if present */}
-      <div className="mx-auto mt-6 max-w-3xl px-5 sm:mt-8 sm:px-8 lg:px-16">
-        <div className="h-52 w-full overflow-hidden rounded-2xl border border-neutral-800 xs:h-64 sm:h-80 md:h-96">
+      <div className="mx-auto mt-5 max-w-3xl px-4 sm:mt-8 sm:px-8 lg:px-16">
+        <div className="h-48 w-full overflow-hidden rounded-2xl border border-neutral-800 sm:h-64 md:h-80 lg:h-96">
           <MediaSlider photos={entry.photos} videos={entry.videos} alt={entry.org} accent={accent} />
         </div>
       </div>
 
       {/* Story content */}
-      <article className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-12 lg:px-16">
+      <article className="mx-auto max-w-3xl px-4 py-8 sm:px-8 sm:py-12 lg:px-16">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-          <span className="font-poppins text-sm font-bold" style={{ color: accent }}>
+          <span className="font-poppins text-xs font-bold sm:text-sm" style={{ color: accent }}>
             {entry.year}
           </span>
           <span className="text-neutral-700">·</span>
-          <span className="flex items-center gap-1 text-sm text-neutral-500">
+          <span className="flex items-center gap-1 text-xs text-neutral-500 sm:text-sm">
             <MapPin className="h-3.5 w-3.5 shrink-0" />
             {entry.location}
           </span>
         </div>
 
-        <h1 className="mt-3 font-poppins text-2xl font-extrabold leading-tight sm:text-3xl md:text-4xl">
+        <h1 className="mt-3 font-poppins text-xl font-extrabold leading-tight sm:text-2xl md:text-3xl lg:text-4xl">
           {entry.role}
         </h1>
-        <p className="mt-1 text-base font-medium text-neutral-400">
+        <p className="mt-1 text-sm font-medium text-neutral-400 sm:text-base">
           {entry.org}
         </p>
 
-        <p className="mt-6 text-[15px] leading-relaxed text-neutral-300 sm:mt-8 sm:text-[16px]">
+        <p className="mt-5 text-sm leading-relaxed text-neutral-300 sm:mt-8 sm:text-[15px] md:text-[16px]">
           {entry.story ?? entry.description}
         </p>
 
-        <div className="mt-6 flex flex-wrap gap-2 sm:mt-8">
+        <div className="mt-5 flex flex-wrap gap-2 sm:mt-8">
           {entry.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-neutral-800 bg-[#0d0d0d] px-3 py-1.5 text-[12px] font-medium text-neutral-300"
+              className="rounded-full border border-neutral-800 bg-[#0d0d0d] px-3 py-1.5 text-[11px] font-medium text-neutral-300 sm:text-[12px]"
             >
               {tag}
             </span>
@@ -260,14 +260,14 @@ export default function BlogPost() {
       </article>
 
       {/* Prev / Next navigation */}
-      <div className="mx-auto max-w-3xl border-t border-neutral-900 px-5 py-8 sm:px-8 sm:py-10 lg:px-16">
+      <div className="mx-auto max-w-3xl border-t border-neutral-900 px-4 py-6 sm:px-8 sm:py-10 lg:px-16">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           {prevEntry ? (
             <Link
               to={`/blog/${prevEntry.slug}`}
-              className="group flex-1 rounded-xl border border-neutral-800 p-4 transition-colors hover:border-[#C1443C]"
+              className="group flex-1 rounded-xl border border-neutral-800 p-3.5 transition-colors hover:border-[#C1443C] sm:p-4"
             >
-              <span className="text-[11px] font-medium uppercase tracking-wide text-neutral-500">
+              <span className="text-[10px] font-medium uppercase tracking-wide text-neutral-500 sm:text-[11px]">
                 ← Previous
               </span>
               <p className="mt-1 truncate font-poppins text-sm font-bold text-white">
@@ -281,9 +281,9 @@ export default function BlogPost() {
           {nextEntry ? (
             <Link
               to={`/blog/${nextEntry.slug}`}
-              className="group flex-1 rounded-xl border border-neutral-800 p-4 text-left transition-colors hover:border-[#C1443C] sm:text-right"
+              className="group flex-1 rounded-xl border border-neutral-800 p-3.5 text-left transition-colors hover:border-[#C1443C] sm:p-4 sm:text-right"
             >
-              <span className="text-[11px] font-medium uppercase tracking-wide text-neutral-500">
+              <span className="text-[10px] font-medium uppercase tracking-wide text-neutral-500 sm:text-[11px]">
                 Next →
               </span>
               <p className="mt-1 truncate font-poppins text-sm font-bold text-white">

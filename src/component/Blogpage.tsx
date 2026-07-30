@@ -114,60 +114,59 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen w-full bg-black font-inter text-white">
 
-
       {/* Header */}
-      <section className="border-b border-neutral-900 px-8 pb-16 pt-14 text-center sm:px-16">
+      <section className="border-b border-neutral-900 px-6 pb-12 pt-10 text-center sm:px-8 sm:pb-16 sm:pt-14 lg:px-16">
         <p
-          className="font-poppins text-sm font-bold uppercase tracking-[0.2em]"
+          className="font-poppins text-xs font-bold uppercase tracking-[0.2em] sm:text-sm"
           style={{ color: accent }}
         >
           Stories
         </p>
-        <h1 className="mt-3 font-poppins text-4xl font-extrabold sm:text-5xl">
+        <h1 className="mt-3 font-poppins text-3xl font-extrabold sm:text-4xl lg:text-5xl">
           Blog
         </h1>
-        <p className="mx-auto mt-6 max-w-xl font-inter text-[15px] leading-relaxed text-neutral-400">
+        <p className="mx-auto mt-4 max-w-xl font-inter text-sm leading-relaxed text-neutral-400 sm:mt-6 sm:text-[15px]">
           Mga kwento sa likod ng bawat larawan — mula sa unang deploy hanggang
           sa mga gabing puro debugging.
         </p>
       </section>
 
       {/* Alternating story entries */}
-      <section className="mx-auto max-w-5xl px-8 py-20 sm:px-16">
-        <div className="space-y-20">
+      <section className="mx-auto max-w-5xl px-6 py-14 sm:px-8 sm:py-20 lg:px-16">
+        <div className="space-y-12 sm:space-y-16 md:space-y-20">
           {entries.map((entry, i) => {
             const reversed = i % 2 === 1;
             return (
               <article
                 key={i}
-                className={`flex flex-col gap-8 sm:gap-12 ${
-                  reversed ? "sm:flex-row-reverse" : "sm:flex-row"
-                } sm:items-center`}
+                className={`flex flex-col gap-6 sm:gap-8 md:gap-12 ${
+                  reversed ? "md:flex-row-reverse" : "md:flex-row"
+                } md:items-center`}
               >
                 {/* Photo */}
-                <div className="h-56 w-full shrink-0 overflow-hidden rounded-xl border border-neutral-800 sm:h-72 sm:w-[42%]">
+                <div className="h-48 w-full shrink-0 overflow-hidden rounded-xl border border-neutral-800 sm:h-64 md:h-72 md:w-[42%]">
                   <PhotoFrame photo={entry.photo} alt={entry.title} />
                 </div>
 
                 {/* Story */}
                 <div className="min-w-0 flex-1">
                   <span
-                    className="font-poppins text-[13px] font-bold"
+                    className="font-poppins text-xs font-bold sm:text-[13px]"
                     style={{ color: accent }}
                   >
                     {entry.date}
                   </span>
-                  <h2 className="mt-2 font-poppins text-2xl font-bold text-white sm:text-3xl">
+                  <h2 className="mt-2 font-poppins text-xl font-bold text-white sm:text-2xl md:text-3xl">
                     {entry.title}
                   </h2>
-                  <p className="mt-4 text-[15px] leading-relaxed text-neutral-400">
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-400 sm:mt-4 sm:text-[15px]">
                     {entry.story}
                   </p>
-                  <div className="mt-5 flex flex-wrap gap-1.5">
+                  <div className="mt-4 flex flex-wrap gap-1.5 sm:mt-5">
                     {entry.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-neutral-800 bg-[#0d0d0d] px-2.5 py-1 text-[11px] font-medium text-neutral-300"
+                        className="rounded-full border border-neutral-800 bg-[#0d0d0d] px-2.5 py-1 text-[10px] font-medium text-neutral-300 sm:text-[11px]"
                       >
                         {tag}
                       </span>
