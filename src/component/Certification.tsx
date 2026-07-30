@@ -3,15 +3,16 @@ interface Certification {
   issuer: string;
   date: string;
   credentialUrl?: string;
-  logo?: string; // optional icon/logo
+  image?: string; // path to certificate image
 }
 
 const certifications: Certification[] = [
   {
     title: "Solar Night Light Assembly",
     issuer: "Tesda",
-    date: "March 2025",
-    credentialUrl: "https://e-tesda.gov.ph/mod/customcert/view.php?id=41350&downloadown=1",
+    date: "July 20 2026",
+    credentialUrl: "/certificates/solarCert.jpg",
+    image: "/certificates/solarCert.jpg",
   },
   // add more here
 ];
@@ -31,26 +32,37 @@ function Certifications() {
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md hover:-translate-y-1 transition-all duration-200"
+              className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-200"
             >
-              <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
-                <span className="text-blue-600 font-bold">🏆</span>
-              </div>
-              <h3 className="font-semibold text-slate-800 mb-1">
-                {cert.title}
-              </h3>
-              <p className="text-sm text-slate-500 mb-1">{cert.issuer}</p>
-              <p className="text-xs text-slate-400 mb-4">{cert.date}</p>
-              {cert.credentialUrl && (
-                <a
-                  href={cert.credentialUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-blue-600 hover:underline"
-                >
-                  View Credential →
-                </a>
+              {cert.image ? (
+                <img
+                  src={cert.image}
+                  alt={cert.title}
+                  className="w-full h-40 object-cover"
+                />
+              ) : (
+                <div className="w-full h-40 bg-blue-50 flex items-center justify-center">
+                  <span className="text-blue-600 font-bold text-2xl">🏆</span>
+                </div>
               )}
+
+              <div className="p-6">
+                <h3 className="font-semibold text-slate-800 mb-1">
+                  {cert.title}
+                </h3>
+                <p className="text-sm text-slate-500 mb-1">{cert.issuer}</p>
+                <p className="text-xs text-slate-400 mb-4">{cert.date}</p>
+                {cert.credentialUrl && (
+                  <a
+                    href={cert.credentialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-blue-600 hover:underline"
+                  >
+                    View Credential →
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
