@@ -2,6 +2,10 @@ import structure from "../assets/4core.jpg";
 import enumerator from "../assets/enumerator.jpeg";
 import enum1 from "../assets/enum1.jpg";
 import enum2 from "../assets/enum2.jpg";
+import college from "../assets/college.png";
+import college1 from "../assets/college1.jpg";
+import college2 from "../assets/college2.jpeg";
+import college3 from "../assets/college3.jpeg";
 import graphic from "../assets/graphic.jpg";
 import graphics1 from "../assets/graphics1.jpg";
 import graphics2 from "../assets/graphics2.jpg";
@@ -77,7 +81,7 @@ export const experiences: Experience[] = [
     tags: ["Solar Lights", "Kitchenware", "Phone Accessories"],
     slug: "my-own-ecommerce-business",
     story:
-      "Bago pa man ako naging developer, sinubukan ko munang magnegosyo online — nagbenta ako ng iba't ibang produkto tulad ng solar lights, kitchenware, at phone accessories sa Shopee, Lazada, at TikTok Shop. Dito ko unang naranasan yung totoong hirap ng pagmamanage ng negosyo: pag-track ng inventory, pagsagot sa mga katanungan ng customers, at pag-proseso ng orders, lahat halos ginawa ko mag-isa. Marami akong natutunan sa panahong ito — hindi lang tungkol sa pagbebenta kundi kung paano talaga umiikot ang isang maliit na negosyo. Kahit hindi 'to naging malaking success, itong experience na 'to ang isa sa mga dahilan kung bakit gustong-gusto kong bumuo ng mga inventory at business management systems ngayon — dahil naranasan ko mismo yung problema bilang negosyante bago ko pa 'to naging solusyon bilang developer.",
+      "During Pandemic I'm thinking how can i earn more money even while you are in your home and working, so i conduct research then i found what we called E-commerce and how to run the ads on social media — Then i try to sell product online like solar street lights, kitchenware, phone accessories using Shopee, Lazada, TikTok Shop, and Facebook Marketplace, facebook ads. In this Business Journey i experience a lot! on how to Hard managing business.: tracking the inventory, answering customers concerns and inquiries, and also processing orders, I handle all the tasks on my own. in this journey i learned a lot — like don't borrow money in the bank when you are startup, It's not just about selling the product Instead, it's about understanding the business dynamics and customer needs. 'Even though this journey was not successful, this journey was giving me a experience —  I experience the challenges firsthand as a business owner.",
   },
   {
     year: "2021 — 2023",
@@ -90,7 +94,7 @@ export const experiences: Experience[] = [
     tags: ["Shopee", "Lazada", "TikTok Shop", "Facebook Marketplace"],
     slug: "admin-assistant-marche-pinas",
     story:
-      "Sa Marche Pinas, naging admin assistant ako para sa isang local e-commerce business na nagbebenta sa maraming platform nang sabay — Shopee, Lazada, TikTok Shop, at Facebook Marketplace. Sobrang dami ng manual na gawain nung una — pag-track ng stock, pag-uugnay ng orders sa iba't ibang platform, pagsagot sa mga tanong ng customers. Dito ko na-realize na kailangan ng mas madaling paraan, kaya nag-alok akong gumawa ng simpleng inventory tracking system para mabawasan yung human error at ma-streamline yung operations. Simple lang siya nung una — spreadsheet-based pa nga — pero yun na yung unang beses na nakita ko kung paano ang isang maliit na tool ay makakatulong nang malaki sa isang negosyo. Itong experience na 'to, kasabay ng background ko sa PHP, ang naging foundation ko papunta sa software development.",
+      "Here at Marche Pinas, I've Become a Admin Assistant for a  local e-commerce business which selling using multiple platforms — Shopee, Lazada, TikTok Shop, at Facebook Marketplace. There was a lot of manual work at first. — track the stocks, confirming orders in multiple platforms, answering customers inquiries.",
   },
   {
     year: "2020",
@@ -103,14 +107,14 @@ export const experiences: Experience[] = [
     tags: ["Wedding Cards", "Holiday Cards", "Social Media Graphics"],
     slug: "graphic-designer-collective-solutions",
     story:
-      "Bilang seasonal graphic designer sa Collective Solutions, ginawa ko yung iba't ibang marketing materials para sa mga clients — wedding cards, holiday cards, social media graphics, at email templates. Kahit hindi ito puro coding, itong experience na 'to ang nagturo sa akin ng mahalagang bagay: yung kahalagahan ng visual hierarchy, spacing, at kulay — mga prinsipyo na hanggang ngayon ay ginagamit ko pa rin kapag nagde-design ako ng UI para sa mga apps at websites. Nakita ko ring mahalaga ang deadline-driven na trabaho, lalo na sa seasonal projects na may fixed na petsa (halimbawa, hindi mo pwedeng i-late yung Christmas card design past Christmas). Itong design sensibility na natutunan ko dito ang tahimik na sumasama sa bawat interface na ginagawa ko ngayon.",
+      "Here at Collective Solutions, I Became seasonal graphic designer we create a — wedding cards, holiday cards, social media graphics, this experience teach me valuable things: like visual hierarchy, spacing, and color combination — until now im using all this principle while im creating a web design and mobile apps. in this work I also realized the importance of being deadline-driven and managing my time effectively. specially in seasonal projects where fixed the dates. (etc, you don't need to late the Christmas card design). The design sensibility I learned here quietly influences every interface I create today.",
   },
   {
     year: "2019",
     role: "Enumerator",
     org: "Philippine Statistics Authority — 2019 Census of Population and Housing",
     location: "Metro Manila, PH",
-    photos: [enumerator, enum1, enum2],
+    photos: [enumerator, enum1, enum2, college, college1, college2, college3],
     description:
       "Conducted household surveys and collected data for the 2019 Census of Population and Housing, contributing to national statistical analysis and planning.",
     tags: ["Field Surveys", "Data Collection"],
