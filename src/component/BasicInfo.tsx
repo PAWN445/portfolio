@@ -33,9 +33,7 @@ function BasicInfo(){
 
 
           <div className="flex flex-wrap gap-3 mb-7">
-            <button className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-full border border-white/20 text-white">
-              Contact Me
-            </button>
+          <Link className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-full border border-white/20 text-white" to="/contact">Contact Me</Link>
             <button className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-full border border-white/20 text-white">
               View Resume
             </button>
@@ -45,8 +43,8 @@ function BasicInfo(){
           </div>
         </div>
       </div>
-        </>
+      </>
     );
 } 
 
-export default BasicInfo
+export default BasicInfo;
