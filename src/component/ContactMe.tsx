@@ -1,6 +1,14 @@
 import { useState } from "react";
-import { Mail, Send } from "lucide-react";
+import { Mail, Send, Loader2, CheckCircle2, XCircle } from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
+
+
+const EMAILJS_SERVICE_ID = "service_2qyoqqu";
+const EMAILJS_TEMPLATE_ID = "template_lglex4l";
+const EMAILJS_PUBLIC_KEY = "nNb5QLeNLVMV0PfS8";
+
+type SendStatus = "idle" | "sending" | "success" | "error";
 
 function ContactMe() {
   const accent = "#C1443C";
@@ -11,6 +19,7 @@ function ContactMe() {
     subject: "",
     message: "",
   });
+  const [status, setStatus] = useState<SendStatus>("idle");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -18,14 +27,39 @@ function ContactMe() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const { name, email, subject, message } = formData;
-    const mailtoLink = `mailto:manalo22arnold@gmail.com?subject=${encodeURIComponent(
-      subject || "Portfolio inquiry"
-    )}&body=${encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\n${message}`
-    )}`;
-    window.location.href = mailtoLink;
+
+    if (!name || !email || !message) {
+      setStatus("error");
+      return;
+    }
+
+    setStatus("sending");
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: name,
+          email: email,
+          title: subject || "Portfolio inquiry",
+          message: message,
+          time: new Date().toLocaleString("en-PH", {
+            dateStyle: "medium",
+            timeStyle: "short",
+          }),
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+
+      setStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setStatus("error");
+    }
   };
 
   return (
@@ -186,14 +220,39 @@ function ContactMe() {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-white text-[14px] font-semibold px-6 py-2.5 rounded-lg transition-opacity hover:opacity-90"
-                style={{ backgroundColor: accent }}
-              >
-                <Send size={16} />
-                Send Message
-              </button>
+              <div className="flex items-center gap-4">
+                <button
+                  type="submit"
+                  disabled={status === "sending"}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-white text-[14px] font-semibold px-6 py-2.5 rounded-lg transition-opacity hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed"
+                  style={{ backgroundColor: accent }}
+                >
+                  {status === "sending" ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send size={16} />
+                      Send Message
+                    </>
+                  )}
+                </button>
+
+                {status === "success" && (
+                  <span className="flex items-center gap-1.5 text-[13px] text-green-400">
+                    <CheckCircle2 size={15} />
+                    Message sent!
+                  </span>
+                )}
+                {status === "error" && (
+                  <span className="flex items-center gap-1.5 text-[13px] text-red-400">
+                    <XCircle size={15} />
+                    Failed to send. Try again.
+                  </span>
+                )}
+              </div>
             </form>
           </div>
         </div>
