@@ -9,6 +9,7 @@ import BlogPost from './component/Blogpost'
 import BlogPage from './component/Blogpage'
 import Certifications from './component/Certification'
 import ContactMe from './component/ContactMe'
+import ViewResume from './component/Resume'
 
 function Home() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/contact" element={<ContactMe />} />
         <Route path="/projects" element={<Project />} />
         <Route path="/aboutme" element={<AboutMe />} />
+        <Route path="/resume" element={<ViewResume />} />
         <Route path="/certifications" element={<Certifications />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPost />} />

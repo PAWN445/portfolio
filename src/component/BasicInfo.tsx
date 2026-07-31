@@ -33,12 +33,9 @@ function BasicInfo(){
 
 
           <div className="flex flex-wrap gap-3 mb-7">
-          <Link className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-full border border-white/20 text-white" to="/contact">Contact Me</Link>
-            <button className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-full border border-white/20 text-white">
-              View Resume
-            </button>
+            <Link className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-full border border-white/20 text-white" to="/contact">Contact Me</Link>
+            <Link className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-full border border-white/20 text-white" to="/resume">View Resume</Link>
             <Link className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-full border border-white/20 text-white" to="/aboutme">About Me</Link>
-
             <Link className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-full border border-white/20 text-white" to="/certifications">Certifications</Link>
           </div>
         </div>
