@@ -16,9 +16,7 @@ const certifications: Certification[] = [
     icon: "/icons/ciscomodernai.png",
   },
 
-
   // Engineering
-
   {
     title: "Python",
     issuer: "CISCO",
@@ -27,14 +25,11 @@ const certifications: Certification[] = [
     icon: "icons/ciscopython.png",
   },
 
-
   // Cloud & DevOps
-
 
   // Security
 
-
-    // 
+  //
   {
     title: "Solar Energy Certificate",
     issuer: "TESDA",
@@ -59,21 +54,32 @@ function Certifications() {
     .filter((group) => group.items.length > 0);
 
   return (
-    <div className="min-h-screen w-full bg-black font-inter text-white py-20 px-8 sm:px-16">
+    <div className="min-h-screen w-full bg-black font-inter text-white">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap');
         .font-poppins { font-family: 'Poppins', sans-serif; }
         .font-inter { font-family: 'Inter', sans-serif; }
       `}</style>
 
-      <div className="max-w-5xl mx-auto">
-        <h1 className="font-poppins text-2xl font-bold text-white">
-          certifications
-        </h1>
-        <p className="mt-3 max-w-2xl font-inter text-[15px] leading-relaxed text-neutral-400 mb-14">
-          Credentials across AI, cloud, engineering, and project management — each verifiable at its source.
+      {/* Header - matches BlogPage hero pattern */}
+      <section className="border-b border-neutral-900 px-6 pb-12 pt-10 text-center sm:px-8 sm:pb-16 sm:pt-14 lg:px-16">
+        <p
+          className="font-poppins text-xs font-bold uppercase tracking-[0.2em] sm:text-sm"
+          style={{ color: accent }}
+        >
+          Credentials
         </p>
+        <h1 className="mt-3 font-poppins text-3xl font-extrabold sm:text-4xl lg:text-5xl">
+          Certifications
+        </h1>
+        <p className="mx-auto mt-4 max-w-xl font-inter text-sm leading-relaxed text-neutral-400 sm:mt-6 sm:text-[15px]">
+          Credentials across AI, cloud, engineering, and project management —
+          each verifiable at its source.
+        </p>
+      </section>
 
+      {/* Categories */}
+      <section className="mx-auto max-w-5xl px-6 py-14 sm:px-8 sm:py-20 lg:px-16">
         {grouped.map((group) => (
           <div key={group.category} className="mb-14">
             <p className="font-inter text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-5">
@@ -123,7 +129,7 @@ function Certifications() {
             </div>
           </div>
         ))}
-      </div>
+      </section>
     </div>
   );
 }
