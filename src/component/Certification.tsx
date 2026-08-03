@@ -36,8 +36,8 @@ const certifications: Certification[] = [
 
     // 
   {
-    title: "Foundations of Cybersecurity",
-    issuer: "Google",
+    title: "Solar Energy Certificate",
+    issuer: "TESDA",
     category: "Skills & Trade",
     credentialUrl: "https://bit.ly/3U9Ones",
     icon: "certificates/solarCert.jpg",
